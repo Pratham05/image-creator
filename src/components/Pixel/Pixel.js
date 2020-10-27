@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './Pixel.module.scss';
 
-const Pixel = () => {
+const Pixel = ({red, green, blue}) => {
     return (
-        <div className={styles.Pixel}>
+        <div 
+        style={{backgroundColor: `rgb(${red}, ${green}, ${blue})`}} 
+        className={styles.Pixel}> 
             
         </div>
     );

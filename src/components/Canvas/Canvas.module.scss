@@ -1,0 +1,9 @@
+@import "../../sass/abstracts/variables";
+
+.Canvas {
+    background-color: $color-primary-light;
+    height: $canvas-height;
+    width: $canvas-width;
+    border: 1rem solid $color-secondary;
+    box-sizing: content-box;
+}

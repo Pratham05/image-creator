@@ -1,0 +1,29 @@
+@import "../../sass/abstracts/variables";
+
+.Button {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    transition: all .2s;
+    font-size: $default-font-size;
+    border: none;
+    cursor: pointer;
+    background-color: $color-secondary;
+    color: $color-white;
+    letter-spacing: .2rem;
+    margin-top: 8rem;
+
+    &:hover {
+        transform: translateY(-.3rem);
+        /* X Y Blur and Color */
+        box-shadow: 0 1rem 2rem rgba($color-secondary, .2);
+    }
+    
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-.1rem);
+        box-shadow: 0 .5rem 1rem rgba($color-secondary, .2);
+    }
+}
