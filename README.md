@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Image Creator
+A Web application which generates an image containing pixels of all different colors.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
