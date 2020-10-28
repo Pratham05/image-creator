@@ -70,6 +70,7 @@ const ImageProvider = (props) => {
     }, []);
 
     const changePixelData = () => {
+        // Make a copy 
         let tempData = imgData.slice();
         setImgData(tempData.reverse());
     }
