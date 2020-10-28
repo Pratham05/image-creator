@@ -1,12 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './Button.module.scss';
+import {ImageContext} from '../../image-context';
 
 const Button = () => {
-    const onClickHandler = () => {
-        console.log("Button Pressed");
-    }
+    const {changePixelData} = useContext(ImageContext);
     return (
-        <button className={styles.Button} onClick={onClickHandler}>Change Pattern</button>
+        <button className={styles.Button} onClick={changePixelData}>Toggle Pattern</button>
     );
 }
 
