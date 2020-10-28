@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// Include Styles for the entire app
 import './sass/main.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ImageProvider} from './image-context';
 
+// The access to the context provider has been provided to the entire app
 ReactDOM.render(
   <React.StrictMode>
     <ImageProvider>
@@ -14,7 +16,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

@@ -1,7 +1,15 @@
 import React, {useState, useEffect} from 'react';
 
+// Initialize the Context Object 
 const ImageContext = React.createContext(null);
 
+/** 
+  * @desc Crates all the possible combinations of the array values provided in an array
+  * For Example - if input = [[a], [b,c]], then output = ["a+b+", "a+c+"]
+  * @param arr - Array containing arrays to be combined 
+  * @param prefix - Default value for recuresion, need not to be provided
+  * @returns A Button component for the change of pattern
+*/
 const createCombinations = (arr, prefix) => {
     prefix = prefix || ''; 
 
@@ -16,20 +24,16 @@ const createCombinations = (arr, prefix) => {
     return combinedArray;
 }
 
-const shuffleArray = (arr) => {
-    let j = null, temp = null;
-    for(let i = arr.length-1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-}
-
+/** 
+  * @desc Provides the Image data Context to the App
+  * Wraps Image provider for providing the data and a function to manipulate this data
+  * @returns Context provider with the required values
+*/
 const ImageProvider = (props) => {
 
     const [imgData, setImgData] = useState(null);
 
+    // This will run only on first mount 
     useEffect(() => {
         const rArray = [];
 
@@ -54,6 +58,7 @@ const ImageProvider = (props) => {
         let arrTemp = [];
 
         for (let i = 0; i < pixelArray.length; i += 4) {
+            // Example Split - ['8', '8', '8', '']
             arrTemp = rgbArray[count].split('+');
             pixelArray[i + 0] = arrTemp[0];     // R value
             pixelArray[i + 1] = arrTemp[1];     // G value
@@ -61,11 +66,7 @@ const ImageProvider = (props) => {
             pixelArray[i + 3] = 255;  // A value
             count++;
         }
-
-        //console.log(pixelArray);
-
         setImgData(pixelArray);
-
     }, []);
 
     const changePixelData = () => {
