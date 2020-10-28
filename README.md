@@ -10,6 +10,8 @@ Image Specifications:
 * The Dimensions of the image is 256X 128px
 * The Application provides two different images which can be toggled using a toggle button
 
+## Technologies Used
+React, Hooks API, Context API and SCSS
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
